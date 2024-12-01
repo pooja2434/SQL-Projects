@@ -1,7 +1,4 @@
-- 👋 Hi, I’m Pooja and I live in chennai.
-- 👀 I’m a  Data Analyst  at Aqgromalin Farm tech chennai.I completed my post graduate program in Data analytics in Imarticus chennai
-- 👩‍💻Involved in designing chatbot using Deluge in Zoho sales IQ script for Aqgromalin (https://www.aqgromalin.com/)
-- 🌱 I have done many projects in Machine learning by using python
-- 💞️ I have knowledge on Fundamentals of statistics,Machine learning algorithms,analaytical tools like ,SQL,python,R,Tableu Libraries: Sklearn, Pandas, SciPy, Numpy, Seaborn, Matplotlib.Former Financial Analyst with nearly 2 years of  Experirence
+ Hi, I’m Pooja and I live in chennai.
+Dynamic and results-driven Data Analyst with 5.8 years of experience in Investment Banking and Data Analytics. Proficient in building automated data pipelines, creating interactive dashboards, and performing advanced data analysis to drive business decisions. Recognized for excellence with multiple awards, performance-based salary hikes, and contributions to process optimization. Expertise in Tableau, SQL, Python, Statistics and Machine Learning techniques.
 - 📫 Mail id:pjravilakshmi@gmail.com
 
