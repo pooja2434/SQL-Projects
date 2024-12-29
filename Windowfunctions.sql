@@ -80,7 +80,7 @@ select ProductID,
 select ProductID,
     CategoryID,
     Price,
-    LEAD(Price) over(partition by CategoryID order by Price desc) as price_desc
+    LEAD(Price) over(partition by CategoryID order by Price desc) as Lowest_Price
     from Products;
 
 9. First_value()
@@ -90,7 +90,7 @@ Gets the price of the most expensive product in each category
 select ProductID,
   CategoryID,
   Price,
-  First_value(Price) over(partition by CategoryID order by Price desc ) as price_desc
+  First_value(Price) over(partition by CategoryID order by Price desc ) as Highest_price
   from Products;
 
 
