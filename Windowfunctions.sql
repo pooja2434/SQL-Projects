@@ -35,6 +35,8 @@ select ProductID,
 
 4. NTILE()
 
+  Divides products into 4 quartiles based on price within each category.
+  
 select ProductID,
     CategoryID,
     Price,
@@ -53,7 +55,9 @@ select ProductID,
 
 6. AVG() as window function
 
-select ProductID,
+  Calculates the average price of products within each category.
+
+  select ProductID,
     CategoryID,
     Price, 
    AVG(Price) over(partition by CategoryID order by Price desc) as price_desc
