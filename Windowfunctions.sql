@@ -116,6 +116,34 @@ select ProductID,
      round(cume_dist() over( partition by CategoryID order by Price desc ),4) as cume_dist
      from Products;
 
+12. percent_rank()
+
+  Calculates the relative rank of the product’s price within its category.
+  Below is the Answer where 1 is the highest value and least value takes -/0
+  After leaving 1 rest is 6 = 1/6=0.1666
+
+ProductID	ProductName	CategoryID	Price	PercentRank
+1	Chais	1	18	-
+2	Chang	1	19	1
+3	Aniseed Syrup	2	10	-
+5	Chef Anton's Gumbo Mix	2	21.35	0.16666666666666666
+6	Chef Anton's Gumbo Mix	2	21.35	0.16666666666666666
+7	Chef Anton's Gumbo Mix	2	21.35	0.16666666666666666
+8	Chef Anton's Gumbo Mix	2	21.35	0.16666666666666666
+9	Chef Anton's Gumbo Mix	2	21.35	0.16666666666666666
+4	Chef Anton's Cajun Seasoning	2	22	1
+
+SELECT 
+    ProductID, 
+    ProductName, 
+    CategoryID, 
+    Price,
+PERCENT_RANK() OVER (PARTITION BY CategoryID ORDER BY Price asc)  AS PercentRank
+FROM Products;
+
+
+
+
   
 
 
