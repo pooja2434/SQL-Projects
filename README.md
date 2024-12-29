@@ -1,4 +1,6 @@
 ## SQL Query Examples 
-This project contains some of the SQL examples used for a sample data for beginners and Intermediate.
+This project contains a collection of SQL examples for beginners and intermediate users, utilizing sample data to demonstrate various concepts and queries
 
-* Here's an [Example Project](https://github.com/pooja2434/SQL-Projects/blob/main/Examples.sql) of the sample data- Customers ,Orders ,Shippings table  where basic joins is performed  for some usecases. 
+* This file shows how to [Create Basic Tables](https://github.com/pooja2434/SQL-Projects/blob/main/Table%20Creation.sql) in SQL Server
+* [Performed Joins](https://github.com/pooja2434/SQL-Projects/blob/main/Joins.sql) with the sample data where basic joins is performed for some usecases.
+* With the [Created Table](https://github.com/pooja2434/SQL-Projects/blob/main/Table%20Creation.sql) Performed all the [Window Functions](https://github.com/pooja2434/SQL-Projects/blob/main/Windowfunctions.sql)
