@@ -23,7 +23,7 @@ Similar to RANK() but does not skip ranks if there are ties.
     Dense_rank() over(partition by CategoryID order by Price desc) as price_desc 
     from Products;
 
-3.ROW_NUMBER()
+3. ROW_NUMBER()
   
 Assigns a unique row number to each product within each category, based on price.
   
@@ -41,7 +41,7 @@ select ProductID,
     Ntile(2) over(partition by CategoryID order by Price desc) as price_desc
     from Products;
 
-5.SUM() as window function
+5. SUM() as window function
 
 Calculates the cumulative price of products within category
 
@@ -68,6 +68,27 @@ select ProductID,
     Price, 
     LAG(Price) over(partition by CategoryID order by Price desc) as price_desc 
     from Products;
+
+8. LEAD()
+
+  Shows the price of next product(based on price within each category)
+
+select ProductID,
+    CategoryID,
+    Price,
+    LEAD(Price) over(partition by CategoryID order by Price desc) as price_desc
+    from Products;
+
+9. First_value()
+
+Gets the price of the most expensive product in each category
+
+select ProductID,
+  CategoryID,
+  Price,
+  First_value(Price) over(partition by CategoryID order by Price desc ) as price_desc
+  from Products;
+
 
 
 
