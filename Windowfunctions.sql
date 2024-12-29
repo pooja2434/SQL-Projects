@@ -33,5 +33,47 @@ select ProductID,
     Row_number() over(partition by CategoryID order by price desc) as rownumber 
     from Products;
 
+4. NTILE()
+
+select ProductID,
+    CategoryID,
+    Price,
+    Ntile(2) over(partition by CategoryID order by Price desc) as price_desc
+    from Products;
+
+5.SUM() as window function
+
+Calculates the cumulative price of products within category
+
+select ProductID,
+    CategoryID,
+    Price, 
+    sum(Price) over(partition by CategoryID order by Price desc) as price_desc 
+    from Products;
+
+6. AVG() as window function
+
+select ProductID,
+    CategoryID,
+    Price, 
+   AVG(Price) over(partition by CategoryID order by Price desc) as price_desc
+    from Products;
+
+7. LAG()
+
+  Shows the price of the previous product (based on price within each category)
+
+select ProductID, 
+    CategoryID,
+    Price, 
+    LAG(Price) over(partition by CategoryID order by Price desc) as price_desc 
+    from Products;
+
+
+
+
+
+
+
   
 
