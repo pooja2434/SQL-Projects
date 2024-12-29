@@ -94,6 +94,9 @@ select ProductID,
   from Products;
 
 10.Last_value()
+
+Gets the price of the least expensive product in each category.
+  
 --UNBOUNDED PRECEDING: All rows before current row are considered.
 -- UNBOUNDED FOLLOWING: All rows after the current row are considered.
 select ProductID,
@@ -140,6 +143,18 @@ SELECT
     Price,
 PERCENT_RANK() OVER (PARTITION BY CategoryID ORDER BY Price asc)  AS PercentRank
 FROM Products;
+
+13. Custom Rolling window
+
+Calculates a rolling average price over the last 2 products (based on price).
+
+SELECT 
+    ProductID, 
+    ProductName, 
+    CategoryID, 
+    Price,
+    Avg(price) over(partition by CategoryID order by Price rows between 1 preceding and current row) as rolling_average
+  FROM Products;
 
 
 
