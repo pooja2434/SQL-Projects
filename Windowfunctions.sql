@@ -105,7 +105,10 @@ select ProductID,
 
 11. cume_dist()
 
-  Calculates the cumulative distribution of the product's price with in each category
+  Calculates the cumulative distribution of the products price with in each category
+  --Here category id under 1 has 2 items , 2 has 3 items  so the output for the first record 
+--with 1 is 1/2- 0.5, the next 1 - 2/2 - 1, for 2 , since it has three items,
+--the answer will be 1/3= 0.33, 2/3 = 0.66, 3/3 =1
 
 select ProductID,
      CategoryID,
