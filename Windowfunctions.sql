@@ -93,6 +93,16 @@ select ProductID,
   First_value(Price) over(partition by CategoryID order by Price desc ) as Highest_price
   from Products;
 
+10.Last_value()
+--UNBOUNDED PRECEDING: All rows before current row are considered.
+-- UNBOUNDED FOLLOWING: All rows after the current row are considered.
+select ProductID,
+    CategoryID,
+    Price,
+   last_value(Price) over(partition by CategoryID order by Price desc rows BETWEEN 
+    unbounded preceding and unbounded following) as Least_price
+    from Products;
+
 
 
 
