@@ -103,6 +103,19 @@ select ProductID,
     unbounded preceding and unbounded following) as Least_price
     from Products;
 
+11. cume_dist()
+
+  Calculates the cumulative distribution of the product's price with in each category
+
+select ProductID,
+     CategoryID,
+     Price,
+     round(cume_dist() over( partition by CategoryID order by Price desc ),4) as cume_dist
+     from Products;
+
+  
+
+
 
 
 
