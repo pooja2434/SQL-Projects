@@ -40,3 +40,14 @@ where
     having 
       count(CustomerID)> 2
   );
+
+--CASE statements
+
+select 
+  ProductID, 
+  ProductName, 
+  SupplierID, 
+  case when Price > 10 then 'Expensive' else 'Cheap' end as pricecategory 
+from 
+  Products;
+
