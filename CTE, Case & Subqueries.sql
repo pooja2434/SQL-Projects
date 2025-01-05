@@ -1,4 +1,4 @@
-Use an Online SQL complier to execute the below query
+Use an Online SQL complier like https://www.codechef.com/sql-online-compiler to execute the below query
 Refer Table Creation.sql(https://github.com/pooja2434/SQL-Projects/blob/main/Table%20Creation.sql) to know about the table structure..
 
 -- Common Table Expressions
