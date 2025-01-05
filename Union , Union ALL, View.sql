@@ -17,3 +17,20 @@ SELECT
   City 
 FROM 
   Suppliers;
+
+
+--Creating View
+Create view OrderDetailsview as 
+select 
+  ord.OrderDetailID, 
+  ord.OrderID, 
+  prod.ProductID, 
+  ord.Quantity, 
+  (ord.Quantity * prod.Price) as Total_price 
+from 
+  OrderDetails Ord 
+  join Products prod on ord.ProductID = prod.ProductID;
+select 
+  * 
+from 
+  OrderDetailsview;
