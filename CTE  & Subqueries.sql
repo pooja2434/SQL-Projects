@@ -3,7 +3,40 @@ Refer Table Creation.sql(https://github.com/pooja2434/SQL-Projects/blob/main/Tab
 
 -- Common Table Expressions
 With Oldest_employee as(
-  select EmployeeID,FirstName,LastName,Notes,BirthDate,
-  Rank() over (order by BirthDate) as Rank
-  from Employees)
-  select * from Oldest_employee;
+  select 
+    EmployeeID, 
+    FirstName, 
+    LastName, 
+    Notes, 
+    BirthDate, 
+    Rank() over (
+      order by 
+        BirthDate
+    ) as Rank 
+  from 
+    Employees
+) 
+select 
+  * 
+from 
+  Oldest_employee;
+
+
+---CTE
+
+select 
+  CustomerID, 
+  CustomerName 
+from 
+  Customers 
+where 
+  CustomerID IN (
+    select 
+      CustomerID 
+    from 
+      Orders 
+    group by 
+      CustomerID 
+    having 
+      count(CustomerID)> 2
+  );
