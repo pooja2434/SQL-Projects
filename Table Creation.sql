@@ -108,7 +108,7 @@ select
 from 
   Employees;
 
---Creating Table with Foreign Key
+--Creating Table Orders with Foreign Key
 
 create table Orders(
   OrderID INT PRIMARY KEY, 
@@ -119,6 +119,8 @@ create table Orders(
   constraint FK_Customer FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID)
 );
 
+-- Inserting into Table Orders
+
 Insert into Orders values (101,1,'2024-01-01',201,1),
 (102,3,'2024-01-06',202,1),
 (108,4,'2024-01-08',207,1),
@@ -126,9 +128,7 @@ Insert into Orders values (101,1,'2024-01-01',201,1),
 (105,7,'2024-01-06',206,3),
 (106,6,'2024-01-08',204,4);
 
-
 select * from Orders;
-
 
 -- Creating Table Suppliers
 
@@ -142,6 +142,8 @@ create table Suppliers(
   Country varchar(20), 
   Phone varchar(20)
 );
+
+-- Inserting into Table Suppliers
 Insert into Suppliers 
 values 
   (
@@ -173,4 +175,28 @@ select
   * 
 from 
   Suppliers;
+
+--Creating table Order details
+create table OrderDetails(
+  OrderDetailID int primary key, OrderID INT, 
+  ProductID INT, Quantity INT
+);
+
+-- Inserting into Table Order details
+
+INSERT INTO OrderDetails 
+VALUES 
+  (1, 10248, 1, 12), 
+  (2, 10248, 1, 10), 
+  (3, 10248, 2, 5), 
+  (4, 10249, 3, 9), 
+  (5, 10249, 4, 40), 
+  (6, 10250, 2, 10), 
+  (7, 10250, 5, 35), 
+  (8, 10250, 3, 15);
+  
+select 
+  * 
+from 
+  OrderDetails;
 
