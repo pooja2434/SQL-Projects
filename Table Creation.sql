@@ -1,3 +1,4 @@
+Use an Online SQL complier like https://www.codechef.com/sql-online-compiler to execute the below query
 ---- Creating Table Customers 
 Create Table Customers(
   CustomerID INT PRIMARY KEY, 
