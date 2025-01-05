@@ -103,6 +103,11 @@ values
     'Margaret holds a BA in English literature from Concordia College and an MA from the American Institute of Culinary Arts. She was temporarily assigned to the London office before returning to her permanent post in Seattle'
   );
 
+select 
+  * 
+from 
+  Employees;
+
 --Creating Table with Foreign Key
 
 create table Orders(
@@ -113,3 +118,13 @@ create table Orders(
   CustomerID INT, 
   constraint FK_Customer FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID)
 );
+
+Insert into Orders values (101,1,'2024-01-01',201,1),
+(102,3,'2024-01-06',202,1),
+(108,4,'2024-01-08',207,1),
+(103,5,'2024-01-01',209,2),
+(105,7,'2024-01-06',206,3),
+(106,6,'2024-01-08',204,4);
+
+
+select * from Orders;
