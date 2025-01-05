@@ -128,3 +128,49 @@ Insert into Orders values (101,1,'2024-01-01',201,1),
 
 
 select * from Orders;
+
+
+-- Creating Table Suppliers
+
+create table Suppliers(
+  SupplierID INT primary key, 
+  SupplierName varchar(20), 
+  ContactName varchar(30), 
+  Address varchar(100), 
+  City varchar(50), 
+  PostalCode varchar(20), 
+  Country varchar(20), 
+  Phone varchar(20)
+);
+Insert into Suppliers 
+values 
+  (
+    1, 'Exotic Liquid', 'Charlotte Cooper', 
+    '49 Gilbert St.', 'Londona', 'EC1 4SD', 
+    'UK', '(171) 555-2222'
+  ), 
+  (
+    2, 'New Orleans Cajun Delights', 
+    'Shelley Burke', 'P.O. Box 78934', 
+    'New Orleans', '70117', 'USA', '(100) 555-4822'
+  ), 
+  (
+    3, 'Grandma Kelly''s Homestead', 
+    'Regina Murphy', '707 Oxford Rd.', 
+    'Ann Arbor', '48104', 'USA', '(313) 555-5735'
+  ), 
+  (
+    4, 'Tokyo Traders', 'Yoshi Nagase', 
+    '9-8 Sekimai Musashino-shi', 'Tokyo', 
+    '100', 'Japan', '(03) 3555-5011'
+  ), 
+  (
+    5, 'Cooperativa de Quesos ''Las Cabras''', 
+    'Antonio del Valle Saavedra', 'Calle del Rosal 4', 
+    'Oviedo', '33007', 'Spain', '(98) 598 76 54'
+  );
+select 
+  * 
+from 
+  Suppliers;
+
