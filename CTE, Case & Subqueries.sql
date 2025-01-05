@@ -2,6 +2,8 @@ Use an Online SQL complier to execute the below query
 Refer Table Creation.sql(https://github.com/pooja2434/SQL-Projects/blob/main/Table%20Creation.sql) to know about the table structure..
 
 -- Common Table Expressions
+
+#Top 2 oldest employee based on their birth date
 With Oldest_employee as(
   select 
     EmployeeID, 
@@ -19,10 +21,15 @@ With Oldest_employee as(
 select 
   * 
 from 
-  Oldest_employee;
+  Oldest_employee 
+where 
+  Rank <= 2;
+
 
 
 ---Subqueries
+
+# Find customers who placed more than 2 orders.
 
 select 
   CustomerID, 
@@ -42,6 +49,7 @@ where
   );
 
 --CASE statements
+ # To categorize products as "Expensive" or "Cheap" based on price.
 
 select 
   ProductID, 
