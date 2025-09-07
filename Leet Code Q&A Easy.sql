@@ -152,7 +152,8 @@ Ans: select vi.customer_id, count(vi.visit_id  ) as count_no_trans  from Visits 
 where tr.transaction_id IS NULL 
 group by vi.customer_id
 
-9. Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday). Return the result table in any order.The result format is in the following example
+9. Write a solution to find all dates id with higher temperatures compared to its previous dates (yesterday).
+Return the result table in any order. The result format is in the following example.
 Input: 
 Weather table:
 +----+------------+-------------+
@@ -163,14 +164,10 @@ Weather table:
 | 3  | 2015-01-03 | 20          |
 | 4  | 2015-01-04 | 30          |
 +----+------------+-------------+
-Output: 
-+----+
-| id |
-+----+
-| 2  |
-| 4  |
-+----+
 
-Ans: 
+Ans:
 select w1.id  from Weather w1 join  Weather w2 on
-Datediff(w1.recordDate ,w2.recordDate)=1 where w1.temperature >w2.temperature ;
+Datediff(w1.recordDate ,w2.recordDate)=1
+where w1.temperature >w2.temperature ;
+
+
