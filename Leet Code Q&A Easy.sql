@@ -61,7 +61,7 @@ Views table:
 +------------+-----------+-----------+------------+
 Ans: select distinct  author_id as id from Views  where author_id =viewer_id order by id;
 
-4. Write a solution to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is strictly greater than 15. Return the result table in any order.
+5. Write a solution to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is strictly greater than 15. Return the result table in any order.
 The result format is in the following example.
 Tweets table:
 +----------+-----------------------------------+
@@ -72,7 +72,7 @@ Tweets table:
 +----------+-----------------------------------+
 Ans: select tweet_id  from Tweets where LENGTH(content)>15;
 
-5. Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null. Return the result table in any order.
+6. Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null. Return the result table in any order.
 The result format is in the following example.
   Example 1:
 
@@ -98,7 +98,7 @@ EmployeeUNI table:
 Ans: select b.unique_id ,a.name  from Employees a left join EmployeeUNI b on
 a.id =b.id
 
-6. Write a solution to report the product_name, year, and price for each sale_id in the Sales table. Return the resulting table in any order.
+7. Write a solution to report the product_name, year, and price for each sale_id in the Sales table. Return the resulting table in any order.
 The result format is in the following example.
   Example 1:
 
@@ -121,3 +121,40 @@ Product table:
 +------------+--------------+
 Ans: select  pr.product_name, sa.year, sa.price  from Sales  sa
 join Product  pr on sa.product_id  = pr.product_id
+8. Write a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
+
+Return the result table sorted in any order.
+
+The result format is in the following example.
+
+ 
+
+Example 1:
+
+Input: 
+Visits
++----------+-------------+
+| visit_id | customer_id |
++----------+-------------+
+| 1        | 23          |
+| 2        | 9           |
+| 4        | 30          |
+| 5        | 54          |
+| 6        | 96          |
+| 7        | 54          |
+| 8        | 54          |
++----------+-------------+
+Transactions
++----------------+----------+--------+
+| transaction_id | visit_id | amount |
++----------------+----------+--------+
+| 2              | 5        | 310    |
+| 3              | 5        | 300    |
+| 9              | 5        | 200    |
+| 12             | 1        | 910    |
+| 13             | 2        | 970    |
++----------------+----------+--------+
+
+Ans: select vi.customer_id, count(vi.visit_id  ) as count_no_trans  from Visits vi left join Transactions tr on vi.visit_id =tr.visit_id 
+where tr.transaction_id IS NULL 
+group by vi.customer_id
