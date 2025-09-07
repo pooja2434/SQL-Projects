@@ -43,5 +43,5 @@ World table:
 | Andorra     | Europe    | 468     | 78115      | 3712000000   |
 | Angola      | Africa    | 1246700 | 20609294   | 100990000000 |
 +-------------+-----------+---------+------------+--------------+
-Ans: select name,population,area from World where area>=300000 and population>=25000000
+Ans: select name,population,area from World where area>=3000000 or population>=25000000
 
