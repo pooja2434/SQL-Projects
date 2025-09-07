@@ -121,16 +121,9 @@ Product table:
 +------------+--------------+
 Ans: select  pr.product_name, sa.year, sa.price  from Sales  sa
 join Product  pr on sa.product_id  = pr.product_id
+  
 8. Write a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
-
-Return the result table sorted in any order.
-
-The result format is in the following example.
-
- 
-
-Example 1:
-
+Return the result table sorted in any order. The result format is in the following example.
 Input: 
 Visits
 +----------+-------------+
