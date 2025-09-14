@@ -32,6 +32,7 @@ SELECT o.order_id,
 FROM Orders o
 LEFT JOIN Customers c
        ON o.customer_id = c.customer_id;
+
 4. Unique product combinations (Cross Join)
 For example, if you have products: A, B, C, the unique combinations are:
 (A, B) , (A, C) , (B, C)
@@ -40,6 +41,7 @@ SELECT p1.product_name AS product_a,
 FROM Products p1
 CROSS JOIN Products p2
 WHERE p1.product_id < p2.product_id;
+## p1.product_id < p2.product_id is used to avoid duplicate and reversed pairs when generating every possible pair of products.
 
 5. Employees with their direct managers (Self-join)
 SELECT e.employee_id,
