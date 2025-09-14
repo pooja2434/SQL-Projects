@@ -84,6 +84,16 @@ SELECT department_id,
 FROM Employees
 GROUP BY department_id;
 
+11. Summarize monthly sales & rank descending
+
+SELECT DATE_TRUNC('month', order_date) AS month,
+       SUM(order_amount)               AS total_sales,
+       RANK() OVER (ORDER BY SUM(order_amount) DESC) AS sales_rank
+FROM Orders
+GROUP BY DATE_TRUNC('month', order_date);
+
+
+
 
 
 
