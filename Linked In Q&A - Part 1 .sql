@@ -92,6 +92,49 @@ SELECT DATE_TRUNC('month', order_date) AS month,
 FROM Orders
 GROUP BY DATE_TRUNC('month', order_date);
 
+12. Count unique customers for each product
+SELECT product_id,
+       COUNT(DISTINCT customer_id) AS unique_customers
+FROM OrderDetails
+GROUP BY product_id;
+
+13. Top 5 regions by total sales
+  
+SELECT region,
+       SUM(sales_amount) AS total_sales
+FROM Sales
+GROUP BY region
+ORDER BY total_sales DESC
+LIMIT 5;
+
+14. Average order value for every customer
+  
+SELECT customer_id,
+       AVG(order_amount) AS avg_order_value
+FROM Orders
+GROUP BY customer_id;
+
+15. Locate duplicate entries in a column
+  
+SELECT email, COUNT(*) AS dup_count
+FROM Users
+GROUP BY email
+HAVING COUNT(*) > 1;
+
+16. Evaluate composite index effect
+
+EXPLAIN ANALYZE
+SELECT * FROM Orders
+WHERE customer_id = 123 AND order_date >= '2025-01-01';
+
+17. Identify High Cardinality
+  SELECT column_name, COUNT(DISTINCT column_name) AS distinct_count
+FROM TableName;
+## High-cardinality means a column contains many distinct values relative to the total number of rows.
+
+
+
+
 
 
 
