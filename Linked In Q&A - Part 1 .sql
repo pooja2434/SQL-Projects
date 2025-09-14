@@ -25,4 +25,29 @@ JOIN EmployeeProject e2
  AND e1.project_id <> e2.project_id
 GROUP BY e1.employee_id, e1.name;
 
+3. Match orders with customers; include unmatched orders (Left Join)
+SELECT o.order_id,
+       o.order_date,
+       c.customer_name
+FROM Orders o
+LEFT JOIN Customers c
+       ON o.customer_id = c.customer_id;
+4. Unique product combinations (Cross Join)
+For example, if you have products: A, B, C, the unique combinations are:
+(A, B) , (A, C) , (B, C)
+SELECT p1.product_name AS product_a,
+       p2.product_name AS product_b
+FROM Products p1
+CROSS JOIN Products p2
+WHERE p1.product_id < p2.product_id;
+
+5. Employees with their direct managers (Self-join)
+SELECT e.employee_id,
+       e.name  AS employee_name,
+       m.name  AS manager_name
+FROM Employees e
+LEFT JOIN Employees m
+       ON e.manager_id = m.employee_id;
+
+
 
