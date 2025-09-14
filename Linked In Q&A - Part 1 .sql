@@ -54,7 +54,29 @@ FROM Orders
 GROUP BY customer_id
 HAVING SUM(order_amount) >
        (SELECT AVG(order_amount) FROM Orders);
+
 7. Employees with lowest salary in their department
+SELECT e.*
+FROM Employees e
+WHERE e.salary = (
+    SELECT MIN(salary)
+    FROM Employees
+    WHERE department_id = e.department_id
+);
+
+8. Products ordered more than 10 times
+SELECT product_id
+FROM OrderDetails
+GROUP BY product_id
+HAVING SUM(quantity) > 10;
+
+9. Regions where highest sales < threshold (e.g. 100000)
+
+SELECT region
+FROM Sales
+GROUP BY region
+HAVING MAX(sales_amount) < 100000;
+
 
 
 
