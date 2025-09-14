@@ -48,6 +48,14 @@ SELECT e.employee_id,
 FROM Employees e
 LEFT JOIN Employees m
        ON e.manager_id = m.employee_id;
+6. Customers whose total purchase > average order value
+SELECT customer_id
+FROM Orders
+GROUP BY customer_id
+HAVING SUM(order_amount) >
+       (SELECT AVG(order_amount) FROM Orders);
+7. Employees with lowest salary in their department
+
 
 
 
