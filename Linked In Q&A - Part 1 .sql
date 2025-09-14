@@ -77,6 +77,13 @@ FROM Sales
 GROUP BY region
 HAVING MAX(sales_amount) < 100000;
 
+10. Median salary per department(use window function)
+
+SELECT department_id,
+       PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY salary) AS median_salary
+FROM Employees
+GROUP BY department_id;
+
 
 
 
